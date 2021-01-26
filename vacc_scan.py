@@ -7,8 +7,8 @@ addr = 'https://www.co.monterey.ca.us/government/departments-a-h/health/diseases
 #Email Variables
 SMTP_SERVER = 'smtp.gmail.com'    #Email Server (don't change!)
 SMTP_PORT = 587                   #Server Port (don't change!)
-GMAIL_USERNAME = '[SENDER]@gmail.com'
-GMAIL_PASSWORD = '[SENDER_PASSWORD]'
+GMAIL_USERNAME = 'SENDER@gmail.com'
+GMAIL_PASSWORD = 'SENDER_PASSWORD'
 
 class Emailer:
     def sendmail(self, recipient, subject, content):
@@ -59,8 +59,8 @@ try:
         if scan != context:
             emailSubject = "COVID Vaccine Registration Changes"
             emailContent = "NEW CHANGES" + str(scan)
-            sender.sendmail('[RECIPIENT_1]@gmail.com', emailSubject, emailContent)
-            sender.sendmail('[RECIPIENT_2]@gmail.com', emailSubject, emailContent)
+            sender.sendmail('RECIPIENT_1@gmail.com', emailSubject, emailContent)
+            sender.sendmail('RECIPIENT_2@gmail.com', emailSubject, emailContent)
             
             context = scan
             print( 'Emails sent at ' + time.asctime() )
@@ -68,5 +68,5 @@ try:
 finally:
     emailSubject = "vacc_scan stopped!"
     emailContent = time.asctime()
-    sender.sendmail('[RECIPIENT]@gmail.com', emailSubject, emailContent)
+    sender.sendmail('RECIPIENT@gmail.com', emailSubject, emailContent)
     print('Program quit email sent at ' + time.asctime() )
