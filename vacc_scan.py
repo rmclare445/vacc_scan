@@ -28,9 +28,9 @@ try:
         if scan != context:
             emailSubject = "COVID Vaccine Registration Changes"
             emailContent = "NEW CHANGES " + str(scan)
-            sender.sendmail(recipient1_email_addr, emailSubject, emailContent)
-            sender.sendmail(recipient2_email_addr, emailSubject, emailContent)
-            sender.sendmail(recipient3_email_addr, emailSubject, emailContent)
+            em.sendmail(recipient1_email_addr, emailSubject, emailContent)
+            em.sendmail(recipient2_email_addr, emailSubject, emailContent)
+            em.sendmail(recipient3_email_addr, emailSubject, emailContent)
             
             context = scan
             print( 'Emails sent at ' + time.asctime() )
@@ -39,5 +39,5 @@ finally:
     # Inform recipient 1 about program exit
     emailSubject = "vacc_scan stopped!"
     emailContent = time.asctime()
-    sender.sendmail(recipient1_email_addr, emailSubject, emailContent)
+    em.sendmail(recipient1_email_addr, emailSubject, emailContent)
     print('Program quit email sent at ' + time.asctime() )
