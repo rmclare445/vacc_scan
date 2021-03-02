@@ -1,4 +1,14 @@
 import smtplib
+# This requires a directory, info/ , and two files within:
+#  a blank __init__.py file and a mail_info file which contains
+#  the mi.* variables below.
+import info.mail_info as mi
+
+sender_gmail_username = mi.sender_gmail_username
+sender_gmail_password = mi.sender_gmail_password
+recipient1_email_addr = mi.rcpnt1_email_username
+recipient2_email_addr = mi.rcpnt2_email_username
+recipient3_email_addr = mi.rcpnt3_email_username
 
 #Email Variables
 SMTP_SERVER    = 'smtp.gmail.com'      #Email Server (don't change!)
